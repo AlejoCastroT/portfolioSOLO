@@ -1,0 +1,128 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    padding:0 50px ;
+    background-color: #000;
+}
+
+
+.nav .nav-logo {
+    width: 50px; 
+    height: auto; 
+}
+
+.nav .lista ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav .lista li{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav .lista li a{
+    margin: 8px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.boton a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 9px 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+
+
+}
+
+.boton a:hover{
+    background-color:red;
+    transition: 0.5s;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* Estilo del botón hamburger */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Menú desplegable para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; 
+    }
+    .nav{
+        padding:15px;
+    }
+    .boton a{
+        text-decoration: none;
+        display: inline-block;
+        padding: 9px 20px;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        color: #fff;
+    }
+    .lista {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        width: 100%;
+        justify-content: center; 
+        position: absolute; 
+        top: 60px; 
+        left: 0;
+        background-color: #ff00005e;
+        z-index: 10;
+        transition: opacity 0.3s ease, max-height 0.3s ease;
+        overflow: hidden;
+        opacity: 0;
+        max-height: 0;
+        border-radius: 0 0 50px 50px;
+    }
+    
+    .lista.open {
+        opacity: 1;
+        max-height: 300px; 
+    }
+    
+    .lista ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .lista li {
+        margin: 10px 0; 
+    }
+    
+    .lista li a {
+        text-decoration: none;
+        color: #fff;
+    }
+}
