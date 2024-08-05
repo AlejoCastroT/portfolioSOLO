@@ -1,49 +1,63 @@
-.carrucel {
-  position: relative;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-.carrucel-inner {
+.contenedor {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.contenedor-img {
   display: flex;
-  width: 200%; /* Cambia esto al 200% para manejar las imágenes duplicadas */
-  /* Si tienes más imágenes, ajusta el ancho en consecuencia */
-  animation: slide 70s infinite linear; /* Ajusta la transición */
+  width: 300vw; /* 3 veces el ancho de la pantalla para las tres imágenes */
+  height: 100vh;
+  transition: transform 0.5s ease;
 }
 
-@keyframes slide {
-  0% {
-    transform: translateX(0);
+.contenedor-img img {
+  width: 33.33vw; /* Cada imagen ocupará un tercio del ancho de la pantalla */
+  height: 100vh;  /* Cada imagen ocupará toda la altura de la pantalla */
+  object-fit: cover; /* Asegura que la imagen cubra completamente el área disponible */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .contenedor-img {
+    width: 300vw; /* Mantener el ancho del contenedor para la transición */
   }
-  100% {
-    transform: translateX(-200%);
+
+  .contenedor-img img {
+    width: 100vw; /* Cada imagen ocupará todo el ancho de la pantalla */
+    height: 100vh;  /* Cada imagen ocupará toda la altura de la pantalla */
   }
-}
 
-.slide {
-  min-width: 400px; /* Ajusta el ancho según tus necesidades */
-  height: 610px; /* Ajusta la altura según tus necesidades */
-  background-size: cover;
-  background-position: center;
-}
+  .arrow {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #000;
+  }
 
-/* Botones de navegación */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 1; /* Asegúrate de que los botones estén por encima del carrusel */
-}
+  .arrow.left {
+    left: 10px;
+  }
 
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
+  .arrow.right {
+    right: 10px;
+  }
 }
