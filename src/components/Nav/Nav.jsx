@@ -1,7 +1,7 @@
 import './Nav.css';
 import { useState } from 'react';
-
-import logo from '../assets/logo O blanco.png';
+import { Link } from 'react-router-dom';
+import logo from '../../assets/logo O blanco.png';
 
 function Nav() {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +9,7 @@ function Nav() {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
     return (
         <nav className='nav'>
             <div className='logo'>
@@ -16,12 +17,13 @@ function Nav() {
             </div>
             <div className={`lista ${isOpen ? 'open' : 'hidden'}`}>
                 <ul>
-                    <li><a href="">Contacto</a></li>
-                    <li><a href="">Sobre Mi</a></li>
+                    <li><Link to="/">Inicio</Link></li>
+                    <li><Link to="/contacto">Contacto</Link></li>
+                    <li><Link to="/sobre-mi">Sobre Mi</Link></li>
                 </ul>
             </div>
             <div className='boton'>
-                <a href="">Obten una ilustración</a>
+                <Link to="/Contacto">Obten una ilustración</Link>
             </div>
             <button className='hamburger' onClick={toggleMenu}>
                 <span className='bar'></span>

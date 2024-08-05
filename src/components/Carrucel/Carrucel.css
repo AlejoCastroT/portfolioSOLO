@@ -1,0 +1,49 @@
+.carrucel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carrucel-inner {
+  display: flex;
+  width: 200%; /* Cambia esto al 200% para manejar las imágenes duplicadas */
+  /* Si tienes más imágenes, ajusta el ancho en consecuencia */
+  animation: slide 70s infinite linear; /* Ajusta la transición */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.slide {
+  min-width: 400px; /* Ajusta el ancho según tus necesidades */
+  height: 610px; /* Ajusta la altura según tus necesidades */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Botones de navegación */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1; /* Asegúrate de que los botones estén por encima del carrusel */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
