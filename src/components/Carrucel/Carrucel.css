@@ -23,7 +23,7 @@ html, body {
 .contenedor-img img {
   width: 33.33vw; /* Cada imagen ocupará un tercio del ancho de la pantalla */
   height: 100vh;  /* Cada imagen ocupará toda la altura de la pantalla */
-  object-fit: cover; /* Asegura que la imagen cubra completamente el área disponible */
+  object-fit:cover;/* Asegura que la imagen cubra completamente el área disponible */
 }
 
 /* Media query para pantallas más pequeñas */
@@ -51,6 +51,12 @@ html, body {
     justify-content: center;
     font-size: 1.5em;
     color: #000;
+    border-radius:10px ;
+  }
+
+  .arrow:hover{
+    background: rgba(101, 98, 98, 0.5);
+    transition: 0.5s;
   }
 
   .arrow.left {
