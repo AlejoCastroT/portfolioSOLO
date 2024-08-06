@@ -1,5 +1,7 @@
+import Sobre from "../components/SobreMi/Sobre";
 function SobreMi() {
-    return <h2>Sobre Mi</h2>;
+    return(
+        <Sobre/>
+    )
 }
-
 export default SobreMi;

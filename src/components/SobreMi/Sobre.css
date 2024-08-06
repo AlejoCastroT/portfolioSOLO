@@ -1,0 +1,72 @@
+.sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/assets/fondoSobre.webp');
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sobre-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin-top: -80px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.592);
+    border-radius: 10px;
+}
+
+.sobre-foto img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.sobre-descripcion h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.nombre-destacado {
+    color: red;
+    font-weight: bold;
+}
+
+.intro-text {
+    font-size: 1.5em;
+}
+
+.titulo {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .sobre-contenido {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .sobre-foto {
+        margin-right: 20px;
+    }
+
+    .sobre-descripcion h1 {
+        font-size: 2.5em;
+    }
+
+    .sobre-descripcion p {
+        font-size: 1.5em;
+    }
+}

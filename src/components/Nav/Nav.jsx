@@ -1,10 +1,26 @@
 import './Nav.css';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/logo O blanco.png';
 
 function Nav() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(() => {
+        // Restaurar el estado del menú desde localStorage al iniciar
+        const savedState = localStorage.getItem('navMenuState');
+        return savedState !== null ? JSON.parse(savedState) : false;
+    });
+
+    const location = useLocation();
+
+    useEffect(() => {
+        // Guardar el estado del menú en localStorage cada vez que cambia
+        localStorage.setItem('navMenuState', JSON.stringify(isOpen));
+    }, [isOpen]);
+
+    useEffect(() => {
+        // Cerrar el menú al cambiar de ruta
+        setIsOpen(false);
+    }, [location]);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -23,7 +39,7 @@ function Nav() {
                 </ul>
             </div>
             <div className='boton'>
-                <Link to="/Contacto">Obten una ilustración</Link>
+                <Link to="/contacto">Obten una ilustración</Link>
             </div>
             <button className='hamburger' onClick={toggleMenu}>
                 <span className='bar'></span>

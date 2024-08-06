@@ -33,6 +33,11 @@
     color: #fff;
 }
 
+.nav .lista li a:hover{
+    color: red;
+    transition: 0.3s;
+}
+
 .boton a{
     text-decoration: none;
     display: inline-block;
