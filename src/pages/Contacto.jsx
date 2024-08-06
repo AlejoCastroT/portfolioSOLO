@@ -1,5 +1,8 @@
+import Cont from "../components/Contacto/Contacto";
 function Contacto() {
-    return <h2>Contacto</h2>;
+    return(
+        <Cont/>
+    );
 }
 
 export default Contacto;

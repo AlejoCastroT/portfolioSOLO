@@ -1,7 +1,26 @@
 import './Sobre.css';
+import { useEffect } from 'react';
 import fotoPerfil from '../../assets/fotoPerfil.webp';
 
 function Sobre() {
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+
+        const hidenElements = document.querySelectorAll('.sobre-contenido');
+        hidenElements.forEach((el) => observer.observe(el));
+
+        return () => {
+            hidenElements.forEach((el) => observer.unobserve(el));
+        };
+    }, []);
     return (
         <div className="sobre">
             <div className="sobre-contenido">

@@ -29,7 +29,9 @@ function Nav() {
     return (
         <nav className='nav'>
             <div className='logo'>
-                <img src={logo} alt="Logo" className="nav-logo" />
+                <Link to="/">
+                    <img src={logo} alt="Logo" className="nav-logo" />
+                </Link>
             </div>
             <div className={`lista ${isOpen ? 'open' : 'hidden'}`}>
                 <ul>
