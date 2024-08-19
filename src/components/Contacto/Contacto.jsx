@@ -42,7 +42,7 @@ function Contacto() {
                 <h1>Contacto</h1>
                 <div className="contacto-links">
                     <div className="contacto-link">
-                        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/3138977844" target="_blank" rel="noopener noreferrer">
                             <FaWhatsapp size={32} />
                             <span>WhatsApp</span>
                         </a>
